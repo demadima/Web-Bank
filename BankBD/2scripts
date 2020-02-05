@@ -1,0 +1,30 @@
+-- Database: "Bank"
+
+-- DROP DATABASE "Bank";
+
+CREATE DATABASE "Bank"
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'Russian, Russia'
+       LC_CTYPE = 'Russian, Russia'
+       CONNECTION LIMIT = -1;
+       
+       
+       
+-- Table: account
+
+-- DROP TABLE account;
+
+CREATE TABLE account
+(
+  id serial NOT NULL,
+  mail character varying(50),
+  "password" character varying(50),
+  price numeric(10,2),
+  CONSTRAINT id PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE account OWNER TO postgres;
